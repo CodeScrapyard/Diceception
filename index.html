@@ -1,0 +1,27 @@
+<script>
+
+function RollTheDice() {
+  var DiceAmount = 10;
+  var Maximal = 10;
+
+  var ResultsAll = 0;
+  for (var i=0; i<DiceAmount;i++) {
+    var Result = Math.floor((Math.random() * Maximal) + 1);
+    ResultsAll = ResultsAll + Result;
+  }
+  return ResultsAll;
+}
+
+function start() {
+    console.log("Started... lay back!");
+    var i = 0;
+    var durchgang = 1;
+    do {
+        i = RollTheDice();
+        if (i === 100) console.log("Runs:",durchgang,"Result:",i);
+        durchgang++;
+    } while (i < 100);
+}
+
+</script>
+<button onClick="start()">Start</button>
